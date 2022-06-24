@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mts-auth-deployment
+  name: mts-auth-deploy
 spec:
   replicas: 3
   template:
@@ -11,13 +11,13 @@ spec:
         app: mts-auth
     spec:
       containers:
-        - name: mts-auth-container
+        - name: mts-auth-ctn
           image: rodsordi/mts-auth
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
           volumeMounts:
-            - name: mts-auth-volume
+            - name: mts-log-vol
               mountPath: /app/log/
           env:
             - name: POD_NAME
@@ -30,7 +30,7 @@ spec:
                   fieldPath: status.podIP
 
       volumes:
-        - name: mts-auth-volume
+        - name: mts-log-vol
           hostPath:
             type: Directory
             path: /D/mt-volumes/app-logs
