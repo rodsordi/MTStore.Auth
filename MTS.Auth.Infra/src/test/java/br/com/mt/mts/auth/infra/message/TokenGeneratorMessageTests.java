@@ -4,6 +4,7 @@ import br.com.mt.mts.auth.domain.Token;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Properties;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
@@ -13,7 +14,7 @@ class TokenGeneratorMessageTests {
 
     @BeforeEach
     void beforeEach() {
-        geracaoTokenMessage = new TokenGeneratorMessage();
+        geracaoTokenMessage = new TokenGeneratorMessage(new Properties());
     }
 
     @Test

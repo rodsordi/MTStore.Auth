@@ -5,11 +5,13 @@ import br.com.mt.mts.auth.infra.kafka.KafkaListener;
 import br.com.mt.mts.auth.infra.kafka.Topic;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Properties;
+
 @Slf4j
 public class EmailDispatcherListener extends KafkaListener<User> {
 
-    public EmailDispatcherListener() {
-        super(Topic.MTS_AUTH_PASS_REINITIALIZATION);
+    public EmailDispatcherListener(Properties properties) {
+        super(properties, Topic.MTS_AUTH_PASS_REINITIALIZATION);
     }
 
     @Override
