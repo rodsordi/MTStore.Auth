@@ -13,7 +13,6 @@
     <properties></properties>
 
     <dependencies>
-        <!-- Arquitetura Hexagonal -->
         <dependency>
             <groupId>br.com.mt</groupId>
             <artifactId>MTS.Auth.Domain</artifactId>
@@ -23,10 +22,9 @@
         <dependency>
             <groupId>br.com.mt</groupId>
             <artifactId>MTS.Commons.Infra</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${mts.commons.version}</version>
         </dependency>
 
-        <!-- Tools -->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
@@ -34,7 +32,7 @@
     </dependencies>
 
     <build>
-        <finalName>AutenticacaoZmb.Infra</finalName>
+        <finalName>MTS.Auth.Infra</finalName>
 
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>

@@ -1,0 +1,19 @@
+package br.com.mt.store.auth.infra.message;
+
+import br.com.mt.store.auth.domain.User;
+import br.com.mt.store.commons.infra.kafka.KafkaDispatcher;
+import br.com.mt.store.commons.infra.kafka.Topic;
+
+import java.util.Properties;
+
+public class ReinicializacaoSenhaMessage extends KafkaDispatcher<User> {
+
+    public ReinicializacaoSenhaMessage(Properties properties) {
+        super(properties, Topic.MTS_AUTH_PASS_REINITIALIZATION);
+    }
+
+    @Override
+    protected String getChave(User user) {
+        return String.valueOf(user.getId());
+    }
+}
